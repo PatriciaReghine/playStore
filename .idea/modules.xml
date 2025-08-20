@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/playStore.iml" filepath="$PROJECT_DIR$/.idea/playStore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/playStore/playStore.iml" filepath="$PROJECT_DIR$/playStore/playStore.iml" />
     </modules>
   </component>
 </project>

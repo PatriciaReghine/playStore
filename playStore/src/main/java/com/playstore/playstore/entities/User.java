@@ -37,6 +37,9 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public User(int i, String matheus, String mail, String number, String number1) {
+    }
+
     public Long getId() {
         return id;
     }
