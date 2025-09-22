@@ -1,14 +1,15 @@
 package com.playstore.playstore.entities;
 
 import jakarta.persistence.*;
+
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_order")
-public class Order implements Serializable{
+@Table(name = "tb_pedido")
+public class Pedido implements Serializable{
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -16,19 +17,17 @@ public class Order implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 
-    private Date dataPedido;
+    private LocalDate dataPedido;
     private String status;
 
-    public Order(){
+    public Pedido(){
 
     }
 
-    public Order(Long id, Date dataPedido, String status){
+    public Pedido(Long id, LocalDate dataPedido, String status){
         this.id = id;
         this.dataPedido = dataPedido;
         this.status = status;
-    }
-    public Order(int i, Date LocalDate, String concluido) {
     }
 
     public Long getId() {
@@ -39,11 +38,11 @@ public class Order implements Serializable{
         this.id = id;
     }
 
-    public Date getDataPedido() {
+    public LocalDate getDataPedido() {
         return dataPedido;
     }
 
-    public void setDataPedido(Date dataPedido) {
+    public void setDataPedido(LocalDate dataPedido) {
         this.dataPedido = dataPedido;
     }
 
@@ -58,7 +57,7 @@ public class Order implements Serializable{
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Order order = (Order) o;
+        Pedido order = (Pedido) o;
         return Objects.equals(id, order.id) && Objects.equals(dataPedido, order.dataPedido) && Objects.equals(status, order.status);
     }
 
