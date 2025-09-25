@@ -13,8 +13,8 @@ import java.time.LocalDate;
 
 public class PedidoResource {
     @GetMapping
-    public ResponseEntity<Pedido> findAll(){
-        Pedido x = new Pedido(null, LocalDate.of(2025,10,05), "Efetivado");
+    public ResponseEntity<Pedido> findAll() {
+        Pedido x = new Pedido(null, LocalDate.of(2025, 10, 05), "Efetivado");
         return ResponseEntity.ok().body(x);
     }
 }

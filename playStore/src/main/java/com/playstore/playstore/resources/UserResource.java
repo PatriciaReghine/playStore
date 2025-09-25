@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserResource {
     @GetMapping
     public ResponseEntity<User>findAll(){
-        User u = new User(1,"Matheus", "ribeiroavilamatheus@gmail.com", "043996089567", "123456");
+        User u = new User(1L,"Matheus", "ribeiroavilamatheus@gmail.com", "043996089567", "123456");
         return ResponseEntity.ok().body(u);
     }
 }

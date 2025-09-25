@@ -12,7 +12,7 @@ public class CategoryResource {
 
     @GetMapping
     public ResponseEntity<Category> findAll() {
-        Category y = new Category(1, "eletronico");
+        Category y = new Category(1L, "eletronico");
         return ResponseEntity.ok().body(y);
     }
 }

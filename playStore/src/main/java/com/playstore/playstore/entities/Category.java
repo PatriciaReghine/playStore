@@ -23,8 +23,7 @@ public class Category implements Serializable {
         this.nome = nome;
 
     }
-    public Category(int i, String nome) {
-    }
+
 
     public Long getId() {
         return id;

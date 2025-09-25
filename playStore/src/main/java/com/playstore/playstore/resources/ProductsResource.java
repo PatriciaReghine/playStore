@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductsResource {
     @GetMapping
     public ResponseEntity<Products> findAll(){
-        Products x = new Products(1,"Carregador", "Carregador de celular", Double.valueOf("15.99"), "123456");
+        Products x = new Products(1L,"Carregador", "Carregador de celular", Double.valueOf("15.99"), "123456");
         return ResponseEntity.ok().body(x);
     }
 }
