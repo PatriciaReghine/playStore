@@ -7,6 +7,7 @@ import org.hibernate.engine.jdbc.connections.internal.UserSuppliedConnectionProv
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,9 +27,9 @@ public class UserResource {
             return ResponseEntity.ok().body(listaDeUsuarios);
         }
 
-        @GetMapping(value = "/teste")
-        public ResponseEntity<User> buscarPorId(long id){
-            User user = userService.buscarPeloId(1L);
+        @GetMapping(value = "/{id}")
+        public ResponseEntity<User> buscarPorId(@PathVariable long id){
+            User user = userService.buscarPeloId(id);
             return ResponseEntity.ok().body(user);
         }
 }
