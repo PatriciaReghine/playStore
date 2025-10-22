@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class ProductsResource {
     @GetMapping
-    public ResponseEntity<Products> findAll(){
+    public ResponseEntity<com.playstore.playstore.entities.Products> findAll(){
         Products x = new Products(1L,"Carregador", "Carregador de celular", Double.valueOf("15.99"), "123456");
         return ResponseEntity.ok().body(x);
     }

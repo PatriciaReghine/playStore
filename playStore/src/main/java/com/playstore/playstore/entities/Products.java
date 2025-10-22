@@ -3,6 +3,7 @@ package com.playstore.playstore.entities;
 import jakarta.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
+import java.security.cert.CertStore;
 import java.util.Objects;
 
 @Entity
@@ -18,6 +19,7 @@ public class Products implements Serializable {
     private String descricao;
     private Double preco;
     private String imgUrl;
+    private Long estoque;
 
 
     public Products() {
@@ -29,6 +31,7 @@ public class Products implements Serializable {
         this.descricao = descricao;
         this.preco = preco;
         this.imgUrl = imgUrl;
+        this.estoque = estoque;
 
     }
 
@@ -70,6 +73,14 @@ public class Products implements Serializable {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public Long getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Long estoque) {
+        this.estoque = estoque;
     }
 
     @Override
