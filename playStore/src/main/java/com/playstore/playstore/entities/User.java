@@ -1,10 +1,15 @@
 package com.playstore.playstore.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.Order;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
@@ -18,6 +23,10 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private  String password;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "client")
+    private List<Order>orders =new ArrayList<>();
 
     //Por regra e convenção é criado um construtor vazio para projetos SPRING
     public User(){
@@ -79,6 +88,10 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false; //Se não for igual ou nulo retorna false.
@@ -89,5 +102,16 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

@@ -26,10 +26,12 @@
 
             userRepository.saveAll(Arrays.asList(u1,u2));
 
-            Products p1 = new Products(null,"carregador","carregador sansung",15.99,"123456");
-            Products p2 = new Products(null,"fone","fone sansung",17.99,"123478");
-
-            productsRepository.saveAll(Arrays.asList(p1,p2));
+            Products p1 = new Products(null,"carregador","carregador sansung",15.99,"123456",30);
+            Products p2 = new Products(null,"fone","fone sansung",17.99,"123478",0);
+            Products p3 = new Products(null,"cabo Usb","cabo para carregador",8.99,"888888",89);
+            Products p4 = new Products(null,"smartwatch","relogio redmi",99.99,"8989898",0);
+            Products p5 = new Products(null,"smartphone sansung","celular sansung",2099.90,"33333",58);
+            productsRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 
             Pedido o1 = new Pedido(null, LocalDate.of(2020,05,10),"efetivado");
             Pedido o2 = new Pedido(null, LocalDate.of(2025, 10, 5),"pendente");

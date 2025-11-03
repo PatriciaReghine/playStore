@@ -19,13 +19,13 @@ public class Products implements Serializable {
     private String descricao;
     private Double preco;
     private String imgUrl;
-    private Long estoque;
+    private Integer estoque;
 
 
     public Products() {
 
     }
-    public Products(Long id,String nome,String descricao,Double preco,String imgUrl){
+    public Products(Long id,String nome,String descricao,Double preco,String imgUrl,Integer estoque){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -75,11 +75,11 @@ public class Products implements Serializable {
         this.imgUrl = imgUrl;
     }
 
-    public Long getEstoque() {
+    public Integer getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Long estoque) {
+    public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
 
@@ -87,11 +87,12 @@ public class Products implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Products products = (Products) o;
-        return Objects.equals(id, products.id) && Objects.equals(nome, products.nome) && Objects.equals(descricao, products.descricao) && Objects.equals(preco, products.preco) && Objects.equals(imgUrl, products.imgUrl);
+        return Objects.equals(id, products.id) && Objects.equals(nome, products.nome) && Objects.equals(descricao, products.descricao) && Objects.equals(preco, products.preco) && Objects.equals(imgUrl, products.imgUrl)&& Objects.equals(estoque, products.estoque);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, descricao, preco, imgUrl);
+        return Objects.hash(id, nome, descricao, preco, imgUrl,estoque);
     }
 }
+
