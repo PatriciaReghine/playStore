@@ -1,4 +1,4 @@
-# playStore
+
 # PlayStore API 🛒
 
 Esta é uma API RESTful desenvolvida em Java com Spring Boot para simular o back-end de um e-commerce (PlayStore). O sistema gerencia o cadastro e a listagem de usuários, produtos, pedidos e categorias.
